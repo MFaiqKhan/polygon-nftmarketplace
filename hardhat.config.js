@@ -1,6 +1,7 @@
 require("@nomiclabs/hardhat-waffle"); // Waffle is a tool that helps you test your code on the latest version of the Ethereum client.
+require('dotenv').config();
 
-const PRIVATE_KEY = process.env.PRIVATE_KEY; 
+const PRIVATE_KEY = process.env.PRIVATE_KEY
 
 
 // This is a sample hardhat configuration file.
@@ -17,7 +18,7 @@ module.exports = {
     //have to define accounts in mainnet as it requires real payment
     mainnet: {
       url: "https://polygon-rpc.com", //mainnet
-      accounts: [PRIVATE_KEY],
+      accounts: [PRIVATE_KEY], 
     },
   },
   solidity: "0.8.4",
