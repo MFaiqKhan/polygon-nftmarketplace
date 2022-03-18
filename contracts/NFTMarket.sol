@@ -68,7 +68,7 @@ contract NFTMarket is ReentrancyGuard { // Inherting from ReentrancyGaurd
             false
         ); 
 
-        IERC721(nftContract).safeTransferFrom(msg.sender, address(this), tokenId); // transferring the ownership of the token from the seller to the contract itself, so that the contract can manage the ownership of the token
+        IERC721(nftContract).transferFrom(msg.sender, address(this), tokenId); // transferring the ownership of the token from the seller to the contract itself, so that the contract can manage the ownership of the token
 
         emit MarketItemCreated(itemId, nftContract, tokenId, msg.sender, address(0), price, false); // emitting the event for when the item is created
     }
@@ -83,7 +83,7 @@ contract NFTMarket is ReentrancyGuard { // Inherting from ReentrancyGaurd
 
 
         idToMarketItem[itemId].seller.transfer(msg.value); // transferring the value/money of the item to the seller
-        IERC721(nftContract).safeTransferFrom(address(this), msg.sender, tokenId); // transferring the ownership of the token to the msg.sender from (this) address which is the contract address
+        IERC721(nftContract).transferFrom(address(this), msg.sender, tokenId); // transferring the ownership of the token to the msg.sender from (this) address which is the contract address
         idToMarketItem[itemId].owner = payable(msg.sender); // setting the owner of the item to the msg.sender , just updating the mapping so it reflect on the local environment
         idToMarketItem[itemId].sold = true;
         _itemsSold.increment(); // keeping a count of the items sold
