@@ -20,7 +20,7 @@ export default function Home() {
 
   // loading nfts function
   const loadNfts = async () => {
-    const provider = new ethers.providers.JsonRpcProvider(); // this is the provider we will use to connect to our smart contract
+    const provider = new ethers.providers.JsonRpcProvider("https://rpc-mumbai.maticvigil.com"); // this is the provider we will use to connect to our smart contract
     const tokenContract = new ethers.Contract(nftaddress, NFT.abi, provider); // getting nftcontract reference in tokenContract
     const marketContract = new ethers.Contract(nftmarketaddress, NFTMarket.abi, provider); // getting nftmarket reference in marketContract
     const data = await marketContract.fetchMarketItems(); // fetching all the nfts from the market, the function is coming directly coming from our smart contract we made.
