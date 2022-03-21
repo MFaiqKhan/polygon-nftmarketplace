@@ -1,0 +1,2 @@
+export const nftaddress = "" // TODO: replace with your nft address you got when deployed on mainnet or testnet
+export const nftmarketaddress = ""  // TODO: replace with your nft market address you got when deployed on mainnet or testnet
