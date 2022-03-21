@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { ethers } from 'ethers';
-import Image from 'next/image';
 import { useRouter } from 'next/router'; // allow us to routes , read values from the route uri dynamically
 import { create as ipfsHttpClient } from 'ipfs-http-client'; // way to access ipfs for uploading and downloading files
 import Web3Modal from 'web3modal';
@@ -118,6 +117,7 @@ export default function SellItems() {
                     name="nft"
                 />
                 {/* showing the file image , if there is a fileUrl as a preview */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 {fileUrl && <img src={fileUrl} alt="nft preview" className='w-1/2 h-64 rounded mt-4' />}
                 {/* clicking on the button will create the item by running the function associated with onclick */}
                 <button 
