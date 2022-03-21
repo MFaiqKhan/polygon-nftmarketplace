@@ -30,3 +30,9 @@ import "@openzeppelin/contracts/utils/Counters.sol"; // easy to use utility for 
         return newItemId; // returning the newItemId  //returning the Id so we can get it on the front end (client side and putting as selling etc) by its id
     }
 }
+
+
+
+// _setTokenURI function comes from ERC721URIStorage.sol , AND It's an expensive operation 
+// we can use tokenUri from ERC721
+// BUT IF you are minting dynamically nfts and dynamic meta data , then its better to use _setotkenUri from erc721URIStorage
