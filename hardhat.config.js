@@ -6,6 +6,7 @@ const PRIVATE_KEY = process.env.PRIVATE_KEY
 
 // This is a sample hardhat configuration file.
 module.exports = {
+  ///defaultNetwork: "hardhat", // The network to use by default
   networks: {
     hardhat: {
       chainId: 1337, // Chain ID for the hardhat development network is 1337. You can find the chain ID of any network in the network configuration file.
