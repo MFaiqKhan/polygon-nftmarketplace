@@ -34,3 +34,26 @@ main()
   // then: npx hardhat run scripts/deploy.js --network localhost (on another terminal)
 
   // AFTER THAT SET nftMarketaddress and nftaddress to config.js (don't close the localhost node)
+
+
+
+  // To Deploy it on Mainnet and Testnet
+
+// Network Name: Mumbai TestNet
+// New RPC URL: https://rpc-mumbai.maticvigil.com
+// Chain ID: 80001
+// Currency Symbol: Matic
+
+// Save this, then you should be able to switch to and use the new network!
+
+//request some matic from testnet faucet to the address
+
+// paste this in hardhat.config.js
+// mumbai: {
+//   url: "https://rpc-mumbai.maticvigil.com",
+//   accounts: [process.env.privateKey]
+// }
+
+// To deploy to Matic, run the following command:
+// npx hardhat run scripts/deploy.js --network mumbai
+
